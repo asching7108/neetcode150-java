@@ -4,8 +4,8 @@ class Solution {
         for (int price : prices) {
             if (price < min) {
                 min = Math.min(min, price);
-            } else if (price - min > ans) {
-                ans = price - min;
+            } else {
+                ans = Math.max(ans, price - min);
             }
         }
         return ans;
