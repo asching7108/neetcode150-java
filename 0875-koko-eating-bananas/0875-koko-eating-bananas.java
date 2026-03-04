@@ -12,7 +12,6 @@ class Solution {
             }
             // mid is a workable speed
             if (hourSpent <= h) {
-                ans = mid;
                 right = mid - 1;
             }
             else {
@@ -20,6 +19,6 @@ class Solution {
             }
         }
 
-        return ans;
+        return left;
     }
 }
