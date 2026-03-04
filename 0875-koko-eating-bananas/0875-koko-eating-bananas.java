@@ -4,21 +4,21 @@ class Solution {
         int right = Arrays.stream(piles).max().getAsInt();
         int ans = right;
 
-         while (left <= right) {
+         while (left < right) {
             int mid = (left + right) / 2;
             int hourSpent = 0;
             for (int pile: piles) {
-                hourSpent += Math.ceil((double) pile / mid);
+                hourSpent += (pile + mid - 1) / mid;
             }
             // mid is a workable speed
             if (hourSpent <= h) {
-                right = mid - 1;
+                right = mid;
             }
             else {
                 left = mid + 1;
             }
         }
 
-        return left;
+        return right;
     }
 }
