@@ -9,7 +9,7 @@ class Solution {
             int mid = (left + right) / 2;
             int hourSpent = 0;
             for (int pile: piles) {
-                hourSpent += pile / mid + (pile % mid > 0 ? 1 : 0);
+                hourSpent += Math.ceil((double) pile / mid);
             }
             // mid is a workable speed
             if (hourSpent <= h) {
