@@ -2,9 +2,7 @@ class Solution {
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1, right = 1;
         for (int pile: piles) {
-            if (pile > right) {
-                right = pile;
-            }
+            right = Math.max(right, pile);
         }
 
          while (left < right) {
