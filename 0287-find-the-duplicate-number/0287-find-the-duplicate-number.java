@@ -1,19 +1,21 @@
 class Solution {
     public int findDuplicate(int[] nums) {
+        // Find the intersection point of the two pointers
         int slow = nums[0];
         int fast = nums[0];
+
         do {
             slow = nums[slow];
             fast = nums[nums[fast]];
         } while (slow != fast);
-        
-        int ptr1 = nums[0];
-        int ptr2 = slow;
-        while (ptr1 != ptr2) {
-            ptr1 = nums[ptr1];
-            ptr2 = nums[ptr2];
+
+        // Find the entrance point of the cycle
+        slow = nums[0];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
         }
         
-        return ptr1;
+        return slow;
     }
 }
