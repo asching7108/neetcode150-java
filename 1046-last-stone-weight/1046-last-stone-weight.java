@@ -10,7 +10,7 @@ class Solution {
             int x = pq.remove();
             int y = pq.remove();
             if (x != y) {
-                pq.add(Math.abs(x - y));
+                pq.add(x - y);
             } 
         }
 
