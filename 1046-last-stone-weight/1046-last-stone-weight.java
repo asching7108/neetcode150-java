@@ -1,9 +1,9 @@
 class Solution {
     public int lastStoneWeight(int[] stones) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
 
         for (int stone : stones) {
-            pq.add(-stone);
+            pq.add(stone);
         }
 
         while (pq.size() > 1) {
@@ -14,6 +14,6 @@ class Solution {
             } 
         }
 
-        return pq.isEmpty() ? 0 : -pq.remove();
+        return pq.isEmpty() ? 0 : pq.remove();
     }
 }
