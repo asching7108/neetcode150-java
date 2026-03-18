@@ -7,7 +7,6 @@ class Solution:
             if len(path) == len(word):
                 return True
 
-            res = False
             if (0 <= row < m
                 and 0 <= col < n
                 and (row, col) not in path
